@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx.conf:ro
+
+  flask:
+    container_name: flask
+    build: ./
+    ports:
+      - "5000:5000"
